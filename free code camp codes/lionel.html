@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="lionel">
+    <meta name="description" content="this is a cat project">
+    <title>CatPhotoApp</title>
+    <link rel="shortcut icon" href="./assets/web-developer-logo-template_674356-207.jpg" type="image/x-icon">
+    <style>
+        html{
+            font-size: 22px;
+            background-image: radial-gradient(whitesmoke,black);
+        }
+        img{
+          width: 70%;
+          height: auto;
+          padding: 40px;
+         
+        }
+        body{
+           background-color: azure;
+           width: 70%;
+           margin: 0 auto;
+           padding: 40px;  
+        }
+        .header__div{
+          display: inline-flex;
+          flex-flow: column nowrap;
+          gap: 5px  ;
+          padding: 5px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+        .header__btn{
+          width: 42px;
+          height: 4px;
+          border: 1px solid rgb(94, 92, 92);
+          border-radius: 3px;
+          transition: all 0.6s;
+        }
+        .header__div:active{
+          box-shadow: 0 3px 5px black;
+        }
+       nav{
+        display: none;
+       background-color: whitesmoke;
+       
+       padding: 10px; 
+       animation: navpopup  0.6s;  
+       transition: all 0.4s;
+       }
+
+       @keyframes navpopup {
+        from{
+          transform: scale(0);
+        }
+        to{
+          transform: scale(1);
+        }
+       }
+      .close{
+      float: right;
+        font-size: 60px;
+        cursor: pointer;
+       
+      }
+      .close:hover,.close:focus{
+        color: violet;
+        transform: rotate(180deg);
+        transition: all 1s;
+      }
+      li{
+        list-style-type: none;
+      }
+      nav a{
+        text-decoration: none;
+        color: black;
+      }
+      .foot{
+        color: black;
+        text-decoration: none;
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+      .foot:hover,.foot:focus{
+      
+        text-shadow: 0 3px 3px rgb(9, 233, 203);
+      }
+    </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__h1">CatPhotoApp</h1>
+
+    <p><b>our menu</b></p>
+
+   <div class="header__div" onclick="document.querySelector('.header__nav').style.display='block'" style="width: auto;">
+      <div class="header__btn 1"></div>
+      <div class="header__btn 2"></div>
+      <div class="header__btn 3"></div>
+   </div>
+
+    <nav class="header__nav" onclick="document.querySelector('.header__nav').style.display='none'">
+      <span class="close"  onclick="document.querySelector('.header__nav').style.display='none'">&times;</span>
+      <ul>
+        <li><a href="#main__cat__about">More about Cats</a></li>
+        <li><a href="#main__cat__list">Our cat lists</a></li>
+        <li><a href="#main__cat__form">Our cat form</a></li>
+      </ul>
+    </nav>
+  </header>
+   
+  <main class="main">
+   <section id="main__cat__about">
+    <h2>CatPhoto</h2>
+    <p>See more <a href="#" target="_blank">Cat Photos</a> in our gallery</p>
+    <img src="./assets/Upside_down_gray_cat.png" alt="Upside down gray cat image" width="500px">
+    
+   </section>
+    <section id="main__cat__list">
+      <h2>Cat list</h2>
+    <h3>Things cat love:</h3>
+    <ul>
+        <li>cat nip</li>
+        <li>laser pointers</li>
+        <li>lasagna</li>
+    </ul>
+    <figure>
+      <img src="./assets/traditional_lasagne.webp"  alt="traditional lasagne image" width="500px">
+      <figcaption>
+       <em> cats love lasagna</em>
+      </figcaption>
+    </figure>
+    <h2>Top 3 things cats hate:</h2>
+      <ol>
+        <li>flea treatments</li>
+        <li>thunder</li>
+        <li>other cats</li>
+      </ol>
+      <figure>
+        <img src="./assets/Teaser Pedigree Cats.jpg" alt="Teaser Pedigree cats image" width="500px">
+        <figcaption>
+          <em>  Cats <strong>hate</strong> other Cats</em> 
+        </figcaption>
+      </figure>
+
+    </section>
+    
+     <section id="main__cat__form">
+      <h2>Cat form</h2>
+
+      <form class="main__form">
+        <fieldset>
+            <legend>Is your cat an indoor or outdoor cat?</legend>
+           <input type="radio" name="indoor" id="indoor" >
+                <label for="indoor">Indoor</label>
+            
+            <input type="radio" name="outdoor" id="outdoor" >
+            <label for="outdoor">Outdoor</label>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>What's your cat's personality?</legend>
+            <input type="checkbox" name="loving" id="loving" >
+            <label for="loving">Loving</label>
+            <br>
+            <input type="checkbox" name="lazy" id="lazy" >
+            <label for="lazy">Lazy</label>
+
+            <input type="checkbox" name="energetic" id="energetic" >
+            <label for="energetic">Energetic</label>
+        </fieldset>
+        <p>
+          <span>share your Cat image here:</span>
+          <br>
+
+        <label for="file"></label>
+        <input type="file" name="file" id="file" placeholder="cat photo file" required autocomplete="" autofocus>
+
+        <button type="submit">submit</button>
+    </p>
+       
+      </form>
+     </section>
+
+  </main>
+      <footer>
+        No copyright - <a href="#"><b style="font-family: sans-serif;">Lionel &copy; coder</b></a>
+        <br>
+        <p><b><a class="foot" href="../index.html">Back To Home Page</a></b></p>
+      </footer>
+      <script src="index.js"></script>
+</body>
+</html>
